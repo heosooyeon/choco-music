@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import topImg from "../src/images/logo.png";
+import logo from "../src/images/Type-logo.png";
 import S2Img from "../src/images/S2img.png";
 import S3Img from "../src/images/S3img.png";
 import Icon from "../src/images/icon.png";
@@ -11,6 +11,7 @@ function App() {
   return (
     <Block>
       <One>
+        <Video autoPlay muted playsInline loop src="/video.mp4"></Video>
         <Logo></Logo>
       </One>
       <Two>
@@ -25,7 +26,9 @@ function App() {
       </Three>
       <Four>
         <Iconimg></Iconimg>
-        <TitleText>지금도 초코뮤직은 수많은 아티스트, 다양한 공간과 함께<br></br><Highlight>이전에 없던 예술 문화</Highlight>를 창조하고 있습니다.</TitleText>
+        <LastText>
+        <TitleText>지금도 초코뮤직은 수많은 아티스트, 다양한 공간과 함께<Highlight>이전에 없던 예술 문화</Highlight>를 창조하고 있습니다.</TitleText>
+        </LastText>
       </Four>
       <Five>
         <LineImg>
@@ -39,19 +42,22 @@ function App() {
 const Block = styled.main`
 `
 const Logo = styled.img.attrs({
-  src:`${topImg}`,
+  src:`${logo}`,
 })`
-  position: relative;
+  position:absolute;
   top: 3%;
   left : 15%;
   width: 10%;
+  z-index: 10;
   object-fit:contain;
 `
 const One = styled.section`
-  background-color: black;
-  width: 100%;
-  height: 650px;
 `
+const Video = styled.video`
+margin-top:0px;
+  width: 100%;
+`
+
 const Two = styled.div`
   padding-top : 17%;
 `
@@ -94,9 +100,16 @@ const Iconimg = styled.img.attrs({
 })`
   margin-top : 4%;
   margin-bottom : 1%;
-  position: relative;
+  position: relative; 
   width: 4%;
   object-fit:contain;
+`
+
+const LastText = styled.div`
+  margin-left: auto;
+  margin-right : auto;
+  width : 42%;
+  height: 30%;
 `
 const Highlight = styled.span`
   color: #FFA429;
